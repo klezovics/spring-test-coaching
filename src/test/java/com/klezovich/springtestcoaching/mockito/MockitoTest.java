@@ -14,6 +14,9 @@ import static org.mockito.Mockito.*;
 // Principle uses cases for mockito
 // 1) Mock behaviour -> when().thenReturn()
 // 2) Inspect what happened with the mock -> verify().XXXXX
+// Mandatory reading - mockito with annotations - https://www.baeldung.com/mockito-annotations
+// To make these annotations work - you need to use a class level annotation from here (2)
+// https://www.baeldung.com/mockito-junit-5-extension -> (1)
 public class MockitoTest {
 
     @Test
