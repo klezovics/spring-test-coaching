@@ -5,7 +5,6 @@ import lombok.Getter;
 import lombok.Setter;
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
-import org.hamcrest.Matchers;
 import org.hamcrest.TypeSafeMatcher;
 import org.junit.jupiter.api.Test;
 
@@ -35,26 +34,26 @@ public class HamcrestTest {
     }
 
     @Test
-    //Used when you have many different kinds of objects, but they share a property
+        //Used when you have many different kinds of objects, but they share a property
     void testUsingBeanMatchers() {
         var person = new Person("AK", 31);
         var employee = new Employee("John", 10000);
 
-        assertThat(person, hasProperty("name",equalTo("AK")));
-        assertThat(employee, hasProperty("name",equalTo("John")));
+        assertThat(person, hasProperty("name", equalTo("AK")));
+        assertThat(employee, hasProperty("name", equalTo("John")));
     }
 
     @Test
-    //Neat matchers for collections
-    //I'd say this is one of the best features
+        //Neat matchers for collections
+        //I'd say this is one of the best features
     void testUsingMatchersForCollections() {
         assertThat(List.of(), empty());
-        assertThat(List.of("a","b"), hasSize(2));
-        assertThat(List.of("a","b","c"), hasItem("c"));
-        assertThat(List.of("a","b","c","d"), hasItems("c","d"));
-        assertThat(List.of("a","b","c","d"), containsInAnyOrder("d","c","b","a"));
+        assertThat(List.of("a", "b"), hasSize(2));
+        assertThat(List.of("a", "b", "c"), hasItem("c"));
+        assertThat(List.of("a", "b", "c", "d"), hasItems("c", "d"));
+        assertThat(List.of("a", "b", "c", "d"), containsInAnyOrder("d", "c", "b", "a"));
 
-        assertThat(List.of(1,2,3), everyItem(greaterThan(0)));
+        assertThat(List.of(1, 2, 3), everyItem(greaterThan(0)));
     }
 
     @Test
@@ -68,50 +67,50 @@ public class HamcrestTest {
     }
 
 
-
     @Test
-    //If you need to test for complex conditions you can write a custom matcher
-    //Super useful for testing complex scenarios
+        //If you need to test for complex conditions you can write a custom matcher
+        //Super useful for testing complex scenarios
     void testUsingCustomMatchers() {
         assertThat("123", onlyDigits());
     }
-
-
-
 
 
     @Getter
     @Setter
     @AllArgsConstructor
     public static class Person {
-         String name;
-         Integer age;
+        String name;
+        Integer age;
     }
 
     @Getter
     @Setter
     @AllArgsConstructor
     public static class Employee {
-         String name;
-         Integer salary;
+        String name;
+        Integer salary;
     }
 
     //Let's create a custom matcher
+    //TODO Create your own matcher
     static public class IsOnlyDigits extends TypeSafeMatcher<String> {
 
-        public static Matcher<String> onlyDigits() {
-            return new IsOnlyDigits();
-        }
-
         @Override
+        //What the matcher does. Comparison logic
         protected boolean matchesSafely(String s) {
             try {
                 Integer.parseInt(s);
                 return true;
-            } catch (NumberFormatException nfe){
+            } catch (NumberFormatException nfe) {
                 return false;
             }
         }
+
+        //Create matcher name
+        public static Matcher<String> onlyDigits() {
+            return new IsOnlyDigits();
+        }
+
 
         @Override
         public void describeTo(Description description) {
