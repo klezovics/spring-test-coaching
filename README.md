@@ -14,3 +14,10 @@ Before writing good production code, master test libs you must young Java-Jedi
 (c) Master Yoda <(-_-)>
 
 
+TODO:
+1) JUnit 5 annotation - https://www.baeldung.com/junit-5
+2) Read about spring boot test annotation - https://www.baeldung.com/spring-boot-testing
+3) How to test with activeMQ - https://howtodoinjava.com/spring-boot/spring-boot-jmstemplate-activemq/
+4) How to mock an external API for testing - https://www.baeldung.com/mockserver
+5*) How to test spring security ???
+
