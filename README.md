@@ -20,4 +20,5 @@ TODO:
 3) How to test with activeMQ - https://howtodoinjava.com/spring-boot/spring-boot-jmstemplate-activemq/
 4) How to mock an external API for testing - https://www.baeldung.com/mockserver
 5*) How to test spring security ???
+6) Test container allow to test integrations with external systems - https://www.baeldung.com/spring-boot-testcontainers-integration-test
 
