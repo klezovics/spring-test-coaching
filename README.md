@@ -21,4 +21,6 @@ TODO:
 4) How to mock an external API for testing - https://www.baeldung.com/mockserver
 5*) How to test spring security ???
 6) Test container allow to test integrations with external systems - https://www.baeldung.com/spring-boot-testcontainers-integration-test
+7) Running asserts on XML - https://www.baeldung.com/xmlunit2
+8) Running asserts for JSON - https://www.baeldung.com/jsonassert
 
